@@ -25,6 +25,21 @@ fun UserScoreScreen( userScoreViewModel: UserScoreViewModel = viewModel()
         }) {
             Text("新增資料")
         }
+
+        Button(onClick = {
+            var userScore = UserScoreModel("子青", 21)
+            userScoreViewModel.updateUser(userScore)
+        }) {
+            Text("新增/異動資料")
+        }
+
+        Button(onClick = {
+            var userScore = UserScoreModel("子青", 21)
+            userScoreViewModel.deleteUser(userScore)
+        }) {
+            Text("deleted user")
+        }
+
         Text(userScoreViewModel.message)
     }
 }
